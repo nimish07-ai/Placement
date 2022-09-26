@@ -10,8 +10,9 @@ from Form.Serailizers import Response_to_form_Serailizer, Additional_Response_Se
 from Form.models import ResponseFromUser
 from UserApp.Custom_Power import Get_Allow_list_permission
 from UserApp.Custom_Power.CustomViewset import CustomViewset
+import logging
 
-
+logger = logging.getLogger('Form_UserResponse')
 def check_obj_permission(request, obj):
     # print(request.user.is_authenticated and request.method in ['GET', 'PUT', 'PATCH',
     #                                                            'DELETE'] and obj.user == request.user.id,
@@ -31,6 +32,9 @@ class Response_to_form_viewset(CustomViewset, viewsets.ModelViewSet):
     serializer_class = Response_to_form_Serailizer
     permission_classes = [
         ModelNamePermission("responsefromuser", "Form", Get_Allow_list_permission, check_obj_permission), ]
+    filter_backends = [DjangoFilterBackend, SearchFilter]
+    filterset_fields =["id","user","Form_id","major_Response"]
+
 
     def Condition_check(self, request, queryset, *args, **kwargs):
         # return Response if condition Failes else return true at end
@@ -49,10 +53,10 @@ class Response_to_form_viewset(CustomViewset, viewsets.ModelViewSet):
 
         return queryset, True
 
-    filter_backends = [DjangoFilterBackend, SearchFilter]
+
 
     def create(self, request, form_data=None, *args, **kwargs):
-
+        # TODO:check if the user has allready have subitted
         data = request.data
         try:
             email = data['answer']
@@ -70,6 +74,7 @@ class Response_to_form_viewset(CustomViewset, viewsets.ModelViewSet):
         comment.user = request.user
         comment.save()
 
+        # TODO:add  permission
         # for x in self.list_of_permission:
         #     assign_perm(f"{x}{self.modelname}", request.user, comment)
 
@@ -79,12 +84,14 @@ class Response_to_form_viewset(CustomViewset, viewsets.ModelViewSet):
             x["user"] = request.user.id
             x["form_response"] = comment.id
 
-        print(z)
+        # print(z)
 
         try:
             a = Additional_Response_Serailizer(data=z, many=True)
             print(a.is_valid(), a.errors)
             if a.is_valid():
+                # TODO add list of all created ansewer in info logger
+                logger.info(f"{z}, valid")
                 a.save()
 
         except Exception as e:
@@ -92,3 +99,5 @@ class Response_to_form_viewset(CustomViewset, viewsets.ModelViewSet):
 
         headers = self.get_success_headers(serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
+

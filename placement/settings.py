@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "log_viewer",
     'guardian',
     'django_filters',
+    'drf_api_logger',
     "phonenumber_field",
 
     # custom apps
@@ -70,7 +71,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    #additional dependencies
+    'drf_api_logger.middleware.api_logger_middleware.APILoggerMiddleware',
 ]
+
 
 ROOT_URLCONF = 'placement.urls'
 
@@ -266,39 +271,49 @@ LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
+
+        'console':{
+            'level':'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename':'./logsdir/root_logger.log',
+            'formatter': 'verbose'
         },
-        'file':{
+        'UserAuth':{
             'level':'DEBUG',
             'class': 'logging.FileHandler',
             'filename':'./logsdir/auth.log',
             'formatter': 'verbose'
         },
-        'file_Cart':{
+        'Form_Admin':{
             'level':'DEBUG',
             'class': 'logging.FileHandler',
-            'filename':'./logsdir/Cart.log',
+            'filename':'./logsdir/Form.log',
             'formatter': 'verbose'
         },
-        'file_OUP':{
+        'Form_Response_toUser':{
             'level':'DEBUG',
             'class': 'logging.FileHandler',
-            'filename':'./logsdir/Oup.log',
+            'filename':'./logsdir/Form_Response_toUser.log',
             'formatter': 'verbose'
         },
-        'file_Admin':{
+        'Form_UserResponse':{
             'level':'DEBUG',
             'class': 'logging.FileHandler',
-            'filename':'./logsdir/Admin.log',
+            'filename':'./logsdir/Form_UserResponse.log',
             'formatter': 'verbose'
         },
-        'file_Order':{
+        'Company_and_visiting':{
             'level':'DEBUG',
             'class': 'logging.FileHandler',
-            'filename':'./logsdir/Order.log',
+            'filename':'./logsdir/Company_and_visiting.log',
             'formatter': 'verbose'
-        }
+        },
+        'Department':{
+            'level':'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename':'./logsdir/Department.log',
+            'formatter': 'verbose'
+        },
 
     },
     'root': {
@@ -307,30 +322,38 @@ LOGGING = {
     },
     'loggers': {
         'console': {
-            'handlers':['file'],
+            'handlers':['console'],
             'level':'INFO',
             'propogate':True,
 
         },
-        'console_cart': {
-            'handlers':['file_Cart'],
-            'level':'INFO',
-            'propogate':True,
-
-        },
-        'console_OUP': {
-            'handlers':['file_OUP'],
-            'level':'INFO',
-            'propogate':True,
-
-        },
-        'console_Admin': {
-            'handlers':['file_Admin'],
+        'UserLogger': {
+            'handlers':['UserAuth'],
             'level':'INFO',
             'propogate':True,
         },
-        'console_Order': {
-            'handlers':['file_Order'],
+        'Form_Admin_Logger': {
+            'handlers':['Form_Admin'],
+            'level':'INFO',
+            'propogate':True,
+        },
+        'Form_Response_to_User_Logger': {
+            'handlers':['Form_Response_toUser'],
+            'level':'INFO',
+            'propogate':True,
+        },
+        'Form_UserResponse_Logger': {
+            'handlers':['Form_UserResponse'],
+            'level':'INFO',
+            'propogate':True,
+        },
+        'Company_and_visiting_Logger': {
+            'handlers':['Company_and_visiting'],
+            'level':'INFO',
+            'propogate':True,
+        },
+        'Department_Logger': {
+            'handlers':['Department'],
             'level':'INFO',
             'propogate':True,
         },
@@ -343,3 +366,14 @@ LOGGING = {
         },
     }
 }
+
+# drf logger
+DRF_API_LOGGER_DATABASE = True
+DRF_API_LOGGER_SIGNAL = True
+DRF_LOGGER_QUEUE_MAX_SIZE = 50
+DRF_API_LOGGER_EXCLUDE_KEYS = []
+
+
+# meid roots
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'

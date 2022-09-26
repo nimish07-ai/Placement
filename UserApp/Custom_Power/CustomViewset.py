@@ -8,7 +8,8 @@ logger = logging.getLogger('UserAuth')
 
 class CustomViewset:
     def list(self, request, *args, **kwargs):
-        queryset = self.filter_queryset(self.get_queryset())
+        # TOdo: update below variable
+        a= queryset = self.filter_queryset(self.get_queryset())
 
         try:
             a, b = self.Condition_check(request, queryset, *args, **kwargs)

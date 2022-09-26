@@ -2,7 +2,7 @@
 # from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets
-
+import logging
 from Common_modules import ModelNamePermission
 from Company.serializer import Visiting_company_record_Serailizer
 from Company.models import Visiting_company_record

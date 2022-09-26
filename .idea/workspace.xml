@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b470bd3c-b8c3-4015-8b25-5580e5c15577" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Common_modules/Gurdian_model_viewset.py" beforeDir="false" afterPath="$PROJECT_DIR$/Common_modules/Gurdian_model_viewset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Company/Views/CompanyView.py" beforeDir="false" afterPath="$PROJECT_DIR$/Company/Views/CompanyView.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Company/Views/Visiting_company_record_Viewser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Company/Views/Visiting_company_record_Viewser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Form/Views/Additional_Response.py" beforeDir="false" afterPath="$PROJECT_DIR$/Form/Views/Additional_Response.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Form/Views/Form.py" beforeDir="false" afterPath="$PROJECT_DIR$/Form/Views/Form.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Form/Views/Form_response_to_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/Form/Views/Form_response_to_user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Form/Views/Response_to_form.py" beforeDir="false" afterPath="$PROJECT_DIR$/Form/Views/Response_to_form.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserApp/Custom_Power/CustomViewset.py" beforeDir="false" afterPath="$PROJECT_DIR$/UserApp/Custom_Power/CustomViewset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserApp/custom_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/UserApp/custom_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserApp/views/UserCoreviewset.py" beforeDir="false" afterPath="$PROJECT_DIR$/UserApp/views/UserCoreviewset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/urls/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/urls/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/placement/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/placement/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/placement/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/placement/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="2Cy7JN9OJQ35lBpuDmlyub6HnBV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\code\2022\placement\frontend\templates\frontend" />
+      <recent name="D:\code\2022\placement\frontend\templates\frontend\frontend" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="placement" type="Python.DjangoServer" factoryName="Django server">
+      <log_file alias="Admin" path="$PROJECT_DIR$/logsdir/Admin.log" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
+      </EXTENSION>
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b470bd3c-b8c3-4015-8b25-5580e5c15577" name="Default Changelist" comment="" />
+      <created>1659762899004</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1659762899004</updated>
+      <workItem from="1659762904673" duration="9492000" />
+      <workItem from="1659866025358" duration="3070000" />
+      <workItem from="1659964494019" duration="2817000" />
+      <workItem from="1659981835087" duration="8862000" />
+      <workItem from="1660045100092" duration="520000" />
+      <workItem from="1660047259533" duration="1307000" />
+      <workItem from="1660069380457" duration="881000" />
+      <workItem from="1660158737342" duration="4885000" />
+      <workItem from="1660214140421" duration="230000" />
+      <workItem from="1660581108727" duration="6283000" />
+      <workItem from="1660591177018" duration="1011000" />
+      <workItem from="1660629363530" duration="4883000" />
+      <workItem from="1660679854347" duration="3443000" />
+      <workItem from="1660908014104" duration="5502000" />
+      <workItem from="1660929864306" duration="1706000" />
+      <workItem from="1660932195171" duration="67000" />
+      <workItem from="1660932887947" duration="671000" />
+      <workItem from="1661537177125" duration="1874000" />
+      <workItem from="1661750660881" duration="13804000" />
+      <workItem from="1662028009328" duration="11577000" />
+      <workItem from="1662104091053" duration="56000" />
+      <workItem from="1662112545235" duration="2251000" />
+      <workItem from="1662115335528" duration="1858000" />
+      <workItem from="1662117762216" duration="267000" />
+      <workItem from="1662119714302" duration="8466000" />
+      <workItem from="1662144001267" duration="564000" />
+      <workItem from="1662181435814" duration="1323000" />
+      <workItem from="1662182865655" duration="14862000" />
+      <workItem from="1662440443336" duration="3016000" />
+      <workItem from="1662443717659" duration="287000" />
+      <workItem from="1662444051525" duration="261000" />
+      <workItem from="1662445794381" duration="1245000" />
+      <workItem from="1662447739858" duration="1526000" />
+      <workItem from="1662482544736" duration="3016000" />
+      <workItem from="1662619989822" duration="4034000" />
+      <workItem from="1662627910292" duration="1701000" />
+      <workItem from="1662705632868" duration="5376000" />
+      <workItem from="1662789949353" duration="8775000" />
+      <workItem from="1662835327855" duration="289000" />
+      <workItem from="1662879016451" duration="8899000" />
+      <workItem from="1662970469220" duration="648000" />
+      <workItem from="1662972049252" duration="543000" />
+      <workItem from="1662977273245" duration="1226000" />
+      <workItem from="1663118984568" duration="1361000" />
+      <workItem from="1663142842459" duration="2952000" />
+      <workItem from="1663266770373" duration="209000" />
+      <workItem from="1663268068388" duration="1067000" />
+      <workItem from="1663414750607" duration="3911000" />
+      <workItem from="1663531336857" duration="1272000" />
+      <workItem from="1663596716080" duration="3384000" />
+      <workItem from="1663600484180" duration="5176000" />
+      <workItem from="1663743623834" duration="26000" />
+      <workItem from="1663744024115" duration="5728000" />
+      <workItem from="1663951534744" duration="3437000" />
+      <workItem from="1664086770957" duration="4397000" />
+      <workItem from="1664091333776" duration="642000" />
+      <workItem from="1664173356851" duration="1619000" />
+      <workItem from="1664175910822" duration="1585000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

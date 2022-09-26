@@ -16,8 +16,7 @@ from ..serializer import UserserializerCoreOperations, PasswordSerializer
 from rest_framework.status import *
 import logging
 
-logger = logging.getLogger('UserAuth')
-
+logger = logging.getLogger('UserLogger')
 
 class UserCoreOperationsViewset(CustomViewset, Gurdian_model_viewset, viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('id')
@@ -90,21 +89,20 @@ class UserCoreOperationsViewset(CustomViewset, Gurdian_model_viewset, viewsets.M
 
         try:
             email_token = data['token']
+
         except KeyError:
-            return Response({'error': "email_token not found in form data"})
+            return Response({'error': "token not found in form data"})
 
         if email_token == "":
             return Response({'error': 'no token exist'})
 
         try:
-
             user = User.objects.get(email_token=f"{email_token}")
-
             if user.email_verified == True:
                 return Response({'success': f'email already verified '}, status=status.HTTP_200_OK)
-
             user.email_verified = True
-            auth.login(request, user)
+            auth.login(request, user,backend='django.contrib.auth.backends.ModelBackend')
+
             user.save()
 
             logger.info(f'{user.email} email-verify conform')
@@ -115,6 +113,7 @@ class UserCoreOperationsViewset(CustomViewset, Gurdian_model_viewset, viewsets.M
         except User.DoesNotExist as e:
             return Response({'token': 'no token exist'})
         except Exception as e:
+            # print(e)
             logger.critical(f'email-verify Failed', e)
             return Response({'error': 'some unexpected error'})
 
@@ -177,11 +176,14 @@ class UserCoreOperationsViewset(CustomViewset, Gurdian_model_viewset, viewsets.M
 
         serializer = PasswordSerializer(data=request.data)
 
+
         if serializer.is_valid(raise_exception=True):
             if not user.check_password(serializer.data.get('old_password')):
                 return Response({'error': 'Current password incorrect'},
                                 status=status.HTTP_400_BAD_REQUEST)
             try:
+                pass
+                # print("passes")
                 password_validation.validate_password(serializer.data.get('new_password'))
             except ValidationError:
                 return Response({'error': "password_short"})
@@ -189,6 +191,7 @@ class UserCoreOperationsViewset(CustomViewset, Gurdian_model_viewset, viewsets.M
             user.set_password(serializer.data.get('new_password'))
             user.save()
             auth.login(self.request, user)
+
             logger.info(f'{user.email} PasswordChange success in')
 
             return Response({'success': 'password set'}, status=status.HTTP_200_OK)

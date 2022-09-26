@@ -12,7 +12,10 @@ from django_filters import rest_framework as filters
 
 from UserApp.Custom_Power import Get_Allow_list_permission
 from UserApp.Custom_Power.CustomViewset import CustomViewset
+import logging
 
+
+logger = logging.getLogger('Form_Response_toUser')
 array_validator = RegexValidator(regex="\\d+(?:,\\d+)+", message='not a valid array')
 positive_number_validator = RegexValidator(regex="/^[+]?([0-9]+(?:[\.][0-9]*)?|\.[0-9]+)$/",
                                            message='not a valid positive')
@@ -43,7 +46,7 @@ class Form_Response_To_User_viewset(CustomViewset,Gurdian_model_viewset):
     filterset_class = Form_Response_To_UserFilter
 
     filter_backends = [DjangoFilterBackend, SearchFilter]
-    filterset_fields = ["id", ]
+    filterset_fields = ["id","User","visiting_reocrd","company","Form_id"]
 
 
     def Condition_check(self, request, queryset, *args, **kwargs):
@@ -106,7 +109,10 @@ class Form_Response_To_User_viewset(CustomViewset,Gurdian_model_viewset):
         if serializer.is_valid():
             comment = serializer.save()
         else:
+            logger.error(f"{z} error invalid {serializer.errors} ")
             return Response({"Completed": False, "error": serializer.errors}, status=status.HTTP_400_BAD_REQUEST )
+
+        logger.info(f"{serializer.data.id} completed sucesfully")
 
         headers = self.get_success_headers(serializer.data)
         return Response({"Completed": True, "output": serializer.data}, status=status.HTTP_201_CREATED, headers=headers)
@@ -142,6 +148,8 @@ class Form_Response_To_User_viewset(CustomViewset,Gurdian_model_viewset):
             a.delete()
         except Response_To_User.DoesNotExist as e:
             print(e)
+            logger.error(f" error invalid {serializer.errors} ")
             return Response({"error": e}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
+        logger.info(f" deleted sucessfully {students_list} ")
         return Response({"Completed": True}, status=status.HTTP_201_CREATED)

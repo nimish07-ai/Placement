@@ -11,8 +11,11 @@ from django_filters import rest_framework as filters
 
 from UserApp.Custom_Power import Get_Allow_list_permission
 from UserApp.Custom_Power.CustomViewset import CustomViewset
+import logging
 
 
+logger = logging.getLogger('Form_Admin_Logger')
+Depertment_logger = logging.getLogger('Department_Logger')
 class FormFilter(filters.FilterSet):
     start_date = filters.DateFilter(label="start_date", field_name="Creation_Date", lookup_expr="gte")
     end_date = filters.DateFilter(label="end_date", field_name="Creation_Date", lookup_expr="lte")
@@ -49,7 +52,7 @@ class Form_viewset(CustomViewset,Gurdian_model_viewset):
 
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        # print(serializer.is_valid(raise_exception=True))
+
         comment = serializer.save()
         comment.Originator=request.user
         comment.save()
@@ -76,8 +79,10 @@ class Form_viewset(CustomViewset,Gurdian_model_viewset):
             a = Questions_Serailizer(data=z, many=True)
             if a.is_valid():
                 a.save()
+            logger.info(f'form creation completed {a.id}')
         except Exception as e:
-            return Response("e")
+            logger.error(f'{e} data= {data}')
+            return Response({"error":"Some internal error"},status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
         try:
@@ -88,8 +93,10 @@ class Form_viewset(CustomViewset,Gurdian_model_viewset):
             if a.is_valid():
                 a.save()
 
+            Depertment_logger.info(f"{a.id} added in department {request.user.Affliated_Department.id}")
+
         except Exception as e:
-            print(e)
+            Depertment_logger.error(f'{e} data= {data}')
 
         headers = self.get_success_headers(serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)

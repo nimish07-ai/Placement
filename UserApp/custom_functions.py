@@ -62,7 +62,7 @@ def email_verfy_core(email, host):
                 user.email_token_dateTime_expire=q
                 user.save()
                 logger.info(f'email not sent with eero code 0 for {email}')
-                print(f'email not sent with erro code 0 for {email}')
+                # print(f'email not sent with erro code 0 for {email}')
             # print(z,"hhhhfff")
 
             return Response({'success': f'email sent '}, status=HTTP_201_CREATED)

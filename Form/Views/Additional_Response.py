@@ -16,6 +16,7 @@ class Additional_Response_viewset(CustomViewset,viewsets.ModelViewSet):
     serializer_class = Additional_Response_Serailizer
     permission_classes = [ModelNamePermission("additional_response", "Form",Get_Allow_list_permission),]
     filter_backends = [DjangoFilterBackend,SearchFilter]
+    filterset_fields =["id","user","form","Question","form_response"]
 
     def Condition_check(self, request, queryset, *args, **kwargs):
         # return Response if condition Failes else return true at end

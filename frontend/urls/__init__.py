@@ -12,6 +12,7 @@ urlpatterns = [
     path('dashboard/', include(dashboardurlpatterns), name="dashboardurlpatterns"),
     path('auth/', include(Authurlpatterns), name="Authurlpatterns"),
     path('errors/',include(Errorurlpatterns),name="Errorurlpatterns"),
+    path('logs/', include('log_viewer.urls')),
     path('',BaseReactView.as_view(),name="Landing"),
 
 ]
