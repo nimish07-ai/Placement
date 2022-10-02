@@ -2,20 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b470bd3c-b8c3-4015-8b25-5580e5c15577" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Common_modules/Gurdian_model_viewset.py" beforeDir="false" afterPath="$PROJECT_DIR$/Common_modules/Gurdian_model_viewset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Company/Views/CompanyView.py" beforeDir="false" afterPath="$PROJECT_DIR$/Company/Views/CompanyView.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Company/Views/Visiting_company_record_Viewser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Company/Views/Visiting_company_record_Viewser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Form/Views/Additional_Response.py" beforeDir="false" afterPath="$PROJECT_DIR$/Form/Views/Additional_Response.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Form/Views/Form.py" beforeDir="false" afterPath="$PROJECT_DIR$/Form/Views/Form.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Form/Views/Form_response_to_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/Form/Views/Form_response_to_user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Form/Views/Response_to_form.py" beforeDir="false" afterPath="$PROJECT_DIR$/Form/Views/Response_to_form.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserApp/Custom_Power/CustomViewset.py" beforeDir="false" afterPath="$PROJECT_DIR$/UserApp/Custom_Power/CustomViewset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserApp/custom_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/UserApp/custom_functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserApp/views/UserCoreviewset.py" beforeDir="false" afterPath="$PROJECT_DIR$/UserApp/views/UserCoreviewset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/urls/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/urls/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Form/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Form/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/placement/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/placement/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/placement/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/placement/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +34,9 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="2Cy7JN9OJQ35lBpuDmlyub6HnBV" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -169,7 +162,9 @@
       <workItem from="1664086770957" duration="4397000" />
       <workItem from="1664091333776" duration="642000" />
       <workItem from="1664173356851" duration="1619000" />
-      <workItem from="1664175910822" duration="1585000" />
+      <workItem from="1664175910822" duration="1901000" />
+      <workItem from="1664515536865" duration="6875000" />
+      <workItem from="1664693499889" duration="615000" />
     </task>
     <servers />
   </component>

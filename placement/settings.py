@@ -220,7 +220,7 @@ STATICFILES_DIRS = [
     BASE_DIR / 'templates/React/static/',
     ]
 STATIC_URL = 'static/'
-# STATIC_ROOT = BASE_DIR / "static"
+STATIC_ROOT = BASE_DIR / "static"
 
 
 # email

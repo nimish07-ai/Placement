@@ -35,7 +35,7 @@ class ResponseFromUser_model_admin(admin.ModelAdmin):
 
 
 class Form_model_admin(admin.ModelAdmin):
-    list_display = ["id",'Visitng_record', 'Type', "get_VisitingDate","Originator"]
+    list_display = ["id",'Visitng_record', 'Type',"get_VisitingDate", "Originator"]
     search_fields = ['Visitng_record','id']
     list_filter = (
         ('Visitng_record__visiting_date', DateFieldListFilter),
@@ -43,7 +43,11 @@ class Form_model_admin(admin.ModelAdmin):
 
     @admin.display(ordering='Visitng_record__visiting_date', description='Visting Date')
     def get_VisitingDate(self, obj):
-        return obj.Visitng_record.visiting_date
+        try:
+            a=obj.Visitng_record.visiting_date
+            return a
+        except Excarption as e :
+            return "  "
 
     class Meta:
         model = Form

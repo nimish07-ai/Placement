@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from placement import settings
+from frontend.urls import hoc
 
 urlpatterns = [
     path('', include("frontend.urls"),),
